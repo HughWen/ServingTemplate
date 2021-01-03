@@ -11,6 +11,7 @@ pip install serving_template
 ```
 
 <h2 align="center">Create the project</h2>
+
 ```
 serving_template init [you_project_name]
 ```
