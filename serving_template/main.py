@@ -38,7 +38,6 @@ def init(template, project_name):
         sh.sed('-i', '', '-e', f's/proj/{project_name}/g', f.strip())
     for f in sh.find(project_dir, '-name', 'Dockerfile*'):
         sh.sed('-i', '', '-e', f's/proj/{project_name}/g', f.strip())
-    sh.mv(os.path.join(project_dir, 'proj'), os.path.join(project_dir, project_name))
 
 
 @cli.command()
