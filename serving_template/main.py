@@ -32,12 +32,12 @@ def init(template, project_name):
     project_dir = f'./{project_name}'
     sh.mkdir('-p', project_dir)
     sh.cp('-rf', os.path.join(HERE, f'templates/{template}/'), project_dir)
-    for f in sh.find(project_dir, '-name', '*'):
+    for f in sh.find(project_dir, '-name', '*.sh'):
         sh.sed('-i', '', '-e', f's/proj/{project_name}/g', f.strip())
-    # for f in sh.find(project_dir, '-name', '*.py'):
-    #     sh.sed('-i', '', '-e', f's/proj/{project_name}/g', f.strip())
-    # for f in sh.find(project_dir, '-name', 'Dockerfile*'):
-    #     sh.sed('-i', '', '-e', f's/proj/{project_name}/g', f.strip())
+    for f in sh.find(project_dir, '-name', '*.yaml'):
+        sh.sed('-i', '', '-e', f's/proj/{project_name}/g', f.strip())
+    for f in sh.find(project_dir, '-name', 'Dockerfile*'):
+        sh.sed('-i', '', '-e', f's/proj/{project_name}/g', f.strip())
     sh.mv(os.path.join(project_dir, 'proj'), os.path.join(project_dir, project_name))
 
 
