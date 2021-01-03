@@ -21,7 +21,7 @@ def package_dir(pkg_name, dir_name):
 
 setup(
     name='serving_template',
-    version='0.1.0',
+    version='0.1.1',
     description='Model Serving Project Template',
     long_description=long_description,
     long_description_content_type='text/markdown',
