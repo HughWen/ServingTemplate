@@ -21,13 +21,13 @@ def package_dir(pkg_name, dir_name):
 
 setup(
     name='serving_template',
-    version='0.0.1',
+    version='0.1.0',
     description='Model Serving Project Template',
     long_description=long_description,
     long_description_content_type='text/markdown',
     url='https://github.com/HughWen/ServingTemplate',
     author='wwen',
-    author_email='zhangjinjie@yimian.com.cn',
+    author_email='wenwh@mail.sustech.edu.cn',
     license='MIT',
     classifiers=[
         'Development Status :: 3 - Alpha',
