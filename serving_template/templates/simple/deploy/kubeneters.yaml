@@ -37,12 +37,8 @@ spec:
           ports:
             - containerPort: 15527
       imagePullSecrets:
-        - name: ym-docker-registry
-      volumes:
-        - name: nfs
-          nfs:
-            path: /data/nfsshare/ai
-            server: nfsweb.ym
+        - name: your-docker-registry
+
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -66,7 +62,7 @@ spec:
           image: yourname/proj-model-server:0.1
           env:
             - name: MODEL_PATH
-              value: /model_path
+              value: /nfs_path/model_path
             - name: BATCH_SIZE
               value: '128'
             - name: MODEL_SLEEP
@@ -77,7 +73,7 @@ spec:
               value: 'proj_REDIS_QUEUE'
           volumeMounts:
             - name: yournfs
-              mountPath: /model_files_path
+              mountPath: /nfs_path
       imagePullSecrets:
         - name: your-docker-registry
       volumes:
